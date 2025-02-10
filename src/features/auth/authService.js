@@ -20,7 +20,7 @@ const registeruser = async(userData) =>{
 // Login User
 const loginuser = async(loginData)=>{
   try{
-    const response = await axios.post(`${API_BASE_URL}/API_URL + 'login', loginData ) 
+    const response = await axios.post(`${API_BASE_URL}/API_URL` + 'login', loginData ) 
     if(response.status===201){
       localStorage.setItem('user', JSON.stringify(response.data))
       setTimeout(()=>{
