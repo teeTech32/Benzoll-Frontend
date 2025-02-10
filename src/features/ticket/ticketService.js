@@ -1,11 +1,12 @@
 import axios from "axios";
 import {toast} from 'react-toastify'
 
-const API_URL = '/api/tickets/'
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_URL = 'api/tickets/'
 
 //Get All Clients' tickets
 const getAll = async()=>{
-  const response = await axios.get(API_URL + 'alltickets')
+  const response = await axios.get(`${API_BASE_URL}/API_URL` + 'alltickets')
   if(response.status===200){
     return response.data
   }else{
@@ -19,7 +20,7 @@ const createTicket = async(ticketData, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.post(API_URL, ticketData, config)
+  const response = await axios.post(`${API_BASE_URL}/API_URL`, ticketData, config)
   if(response.status===201){
     toast.success('You have created a ticket')
     return response.data
@@ -35,7 +36,7 @@ const getTickets = async(token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.get(API_URL, config)
+  const response = await axios.get(`${API_BASE_URL}/API_URL`, config)
     if(response.status===200){
       if(response.data.length===0){
         toast.error("You don't have any ticket")
@@ -56,7 +57,7 @@ const getTicket = async(ticketId, token) =>{
       Authorization : `Bearer ${token}`
     }
   }
-  const response = await axios.get(API_URL + ticketId, config)
+  const response = await axios.get(`${API_BASE_URL}/API_URL` + ticketId, config)
   if(response.status===200){
     toast.success('Ticket viewed')
     return response.data
@@ -71,7 +72,7 @@ const closeTicket = async(ticketId, token)=>{
       Authorization : `Bearer ${token}`
     }
   }
-  const response = await axios.put(API_URL + ticketId, {status: 'closed'}, config)
+  const response = await axios.put(`${API_BASE_URL}/API_URL` + ticketId, {status: 'closed'}, config)
   if(response.status===200){
     toast.success('Ticket Closed')
     return response.data
@@ -86,7 +87,7 @@ const editTicketData = async(choice, text, ticketId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.put(API_URL + ticketId, 
+  const response = await axios.put(`${API_BASE_URL}/API_URL` + ticketId, 
     {
     product : choice,
     description: text
@@ -106,7 +107,7 @@ const deleteTicket = async(ticketId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.delete(API_URL + ticketId, config)
+  const response = await axios.delete(`${API_BASE_URL}/API_URL` + ticketId, config)
   if(response.status===200){
     toast.success('Your ticket is deleted')
   }else{
