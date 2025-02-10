@@ -25,7 +25,7 @@ const createNote = async(noteText, istaffText, ticketId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.post(API_URL + ticketId + '/notes', 
+  const response = await axios.post(`${API_BASE_URL}/API_URL` + ticketId + '/notes', 
     {
     text: noteText,
     isstaff: istaffText 
@@ -46,7 +46,7 @@ const editNote = async(noteEditText, ticketId, noteId, token)=>{
       Authorization : `Bearer ${token}`
     }
   }
-  const response = await axios.put(API_URL + ticketId + '/notes/' + noteId,
+  const response = await axios.put(`${API_BASE_URL}/API_URL` + ticketId + '/notes/' + noteId,
     {
       text: noteEditText
     }, 
@@ -65,7 +65,7 @@ const deleteNote = async(ticketId, noteId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.delete(API_URL + ticketId + '/notes/' + noteId, config)
+  const response = await axios.delete(`${API_BASE_URL}/API_URL` + ticketId + '/notes/' + noteId, config)
   if(response.status===200){
     toast.success('Note Deleted')
   }else{
