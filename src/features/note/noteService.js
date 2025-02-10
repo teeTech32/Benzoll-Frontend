@@ -1,8 +1,8 @@
 import axios from "axios";
 import {toast} from 'react-toastify'
 
-
-const API_URL = '/api/tickets/'
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_URL = 'api/tickets/'
 
 const getNotes = async(ticketId, token) =>{
   const config = {
@@ -10,7 +10,7 @@ const getNotes = async(ticketId, token) =>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.get(API_URL + ticketId + '/notes', config)
+  const response = await axios.get(`${API_BASE_URL}/API_URL` + ticketId + '/notes', config)
   if(response.status===200){
     toast.success('Notes viewed')
     return response.data
