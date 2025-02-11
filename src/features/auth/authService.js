@@ -2,11 +2,10 @@ import axios from "axios";
 import {toast} from 'react-toastify'
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
-const API_URL = 'api/users/'
- 
+
 //Register User
 const registeruser = async(userData) =>{
-  const response = await axios.post(`${API_BASE_URL}/API_URL`, userData)
+  const response = await axios.post(`${API_BASE_URL}/api/users/`, userData)
   if(response.status===201){
     localStorage.setItem('user', JSON.stringify(response.data))
     setTimeout(()=>{
@@ -20,7 +19,7 @@ const registeruser = async(userData) =>{
 // Login User
 const loginuser = async(loginData)=>{
   try{
-    const response = await axios.post(`${API_BASE_URL}/API_URL` + 'login', loginData ) 
+    const response = await axios.post(`${API_BASE_URL}/api/users/login`, loginData ) 
     if(response.status===201){
       localStorage.setItem('user', JSON.stringify(response.data))
       setTimeout(()=>{
