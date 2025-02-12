@@ -56,7 +56,7 @@ const getTicket = async(ticketId, token) =>{
       Authorization : `Bearer ${token}`
     }
   }
-  const response = await axios.get(`${API_BASE_URL}/api/tickets/ticketId`  , config)
+  const response = await axios.get(`${API_BASE_URL}/api/tickets/` + ticketId, config)
   if(response.status===200){
     toast.success('Ticket viewed')
     return response.data
@@ -71,7 +71,7 @@ const closeTicket = async(ticketId, token)=>{
       Authorization : `Bearer ${token}`
     }
   }
-  const response = await axios.put(`${API_BASE_URL}/api/tickets/ticketId`, {status: 'closed'}, config)
+  const response = await axios.put(`${API_BASE_URL}/api/tickets/` + ticketId, {status: 'closed'}, config)
   if(response.status===200){
     toast.success('Ticket Closed')
     return response.data
@@ -86,7 +86,7 @@ const editTicketData = async(choice, text, ticketId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.put(`${API_BASE_URL}/api/tickets/ticketId`, 
+  const response = await axios.put(`${API_BASE_URL}/api/tickets/` + ticketId, 
     {
     product : choice,
     description: text
@@ -106,7 +106,7 @@ const deleteTicket = async(ticketId, token)=>{
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.delete(`${API_BASE_URL}/api/tickets/ticketId`, config)
+  const response = await axios.delete(`${API_BASE_URL}/api/tickets/` + ticketId, config)
   if(response.status===200){
     toast.success('Your ticket is deleted')
   }else{
