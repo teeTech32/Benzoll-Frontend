@@ -27,7 +27,7 @@ const Alltickets = () => {
       <header class='text-center mb-10 mt-20'>
         <h1 class='font-bold text-white md:text-lg xl:text-xl'>All Customers' Tickets</h1>
       </header>
-      <div class='px-20'>
+      <div class='px-10'>
          { Array.isArray(tickests )? tickests.slice(0, visibleCount)?.map((ticket)=>(
             <AllticketItems key={ticket._id} ticket={ticket} class='px-10'/> )) : 
              (<div class='text-center'>
