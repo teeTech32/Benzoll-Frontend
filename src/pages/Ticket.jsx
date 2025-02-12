@@ -44,7 +44,7 @@ const Ticket = () => {
   return ticket ?<div data-aos="fade-down"
                       data-aos-easing="linear"
                       data-aos-duration="1500" class='flex justify-center'> 
-  <div class='container w-[380px] h-auto md:w-[550px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-300 via-green-700 to-green-900 mx-20 my-28 py-5  rounded-t-xl rounded-bl-xl relative '>
+  <div class='container w-[450px] h-auto md:w-[550px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-300 via-green-700 to-green-900 mx-6 my-28 py-5  rounded-t-xl rounded-bl-xl relative '>
     {showAlert && (
                   <div className="absolute   mb-2 right-0 top-2 transform -translate-x-1/2 bg-black text-white text-sm px-2 py-1 rounded-lg shadow-lg">
                     Go Back ?
