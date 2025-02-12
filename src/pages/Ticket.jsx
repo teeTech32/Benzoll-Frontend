@@ -125,7 +125,7 @@ const Ticket = () => {
     { deleteTicket && <DeleteTicket setDeleteTicket={setDeleteTicket}/>}
     { editTicket && <EditTicket setEditTicket={setEditTicket}/>}
   </div>
-   : <Navigate to='/'/>
+   : <Navigate to='/tickets'/>
 }
 
 export default Ticket
