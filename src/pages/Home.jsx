@@ -91,7 +91,7 @@ const Home = ({setLogin}) => {
             onMouseEnter={()=>setShowAlertCreateTicket(true)} 
             onMouseLeave={()=>setShowAlertCreateTicket(false)}>
             <FaQuestionCircle class='sm:text-sm md:text-lg xl:text-xl'/> <span class='sm:text-xs md:text-sm xl:text-lg'
-          >Create New Ticket</span>
+          >Create Ticket</span>
           </Link>
         </div>
         <div data-aos='flip-right'
@@ -104,7 +104,7 @@ const Home = ({setLogin}) => {
             onMouseEnter={()=>setShowAlertViewTicket(true)} 
             onMouseLeave={()=>setShowAlertViewTicket(false)}>
           <FaTicketAlt class='sm:text-sm md:text-lg xl:text-xl'/><span class='sm:text-xs md:text-sm xl:text-lg' 
-          >View Your Tickets</span> 
+          >Your Tickets</span> 
           </Link>
         </div>
       </div>
