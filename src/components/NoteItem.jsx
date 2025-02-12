@@ -25,7 +25,7 @@ const NoteItem = ({note}) => {
     <>
       <div class={`card card-body mt-2 border-2 border-white rounded-md px-2 pb-2 pt-1 ${note.isstaff === 'YES' ? 'bg-green-400' : ''}`}>
         <div class='md:text-lg text-sm '>
-          <button class="float-end hover:text-red-600 ml-1">
+          <button class="float-end hover:text-red-600 ml-2">
             {showAlert && (
                   <div className="absolute bottom-full w-36 mb-2 left-1/2 transform -translate-x-3/2 bg-black text-white text-sm px-2 py-1 rounded-lg shadow-lg">
                       Clicking on this button means you have intentionally deleted a note which can not be retrieved !
