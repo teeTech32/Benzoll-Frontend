@@ -52,7 +52,7 @@ const Tickets = () => {
           </li>
         </ul>
       </section>
-      <section class='bg-green-950 opacity-50 '>
+      <section class='bg-green-950 opacity-50  h-screen'>
         <div class='pt-5 pb-40 px-10 '>
           { tickets ? tickets?.map((ticket)=>(
             <TicketItem key={ticket?._id} ticket={ticket}/>
