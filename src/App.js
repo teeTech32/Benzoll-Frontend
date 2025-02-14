@@ -34,7 +34,7 @@ function App() {
   return  isLoading ? <Spinner/> :  <>
           <Router>
             <ToastContainer/>
-            <div class="bg-green-950 bg-opacity-85 ">
+            <div class="bg-green-950 bg-opacity-85 h-screen ">
               <Header setForm={setForm} setLogin={setLogin}/>
               <Routes>
                 <Route path='/' element={<Home setLogin={setLogin}/>}/>
