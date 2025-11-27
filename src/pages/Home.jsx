@@ -90,7 +90,7 @@ const Home = ({setLogin}) => {
             onClick={openLogin} 
             onMouseEnter={()=>setShowAlertCreateTicket(true)} 
             onMouseLeave={()=>setShowAlertCreateTicket(false)}>
-            <FaQuestionCircle class='sm:text-sm md:text-lg xl:text-xl'/> <span class='sm:text-xs md:text-sm xl:text-lg'
+            <FaQuestionCircle class='sm:text-sm md:text-lg xl:text-xl text-black'/> <span class='sm:text-xs md:text-sm xl:text-lg text-black'
           >Create Ticket</span>
           </Link>
         </div>
@@ -103,7 +103,7 @@ const Home = ({setLogin}) => {
             onClick={openLogin}
             onMouseEnter={()=>setShowAlertViewTicket(true)} 
             onMouseLeave={()=>setShowAlertViewTicket(false)}>
-          <FaTicketAlt class='sm:text-sm md:text-lg xl:text-xl'/><span class='sm:text-xs md:text-sm xl:text-lg' 
+          <FaTicketAlt class='sm:text-sm md:text-lg xl:text-xl text-black'/><span class='sm:text-xs md:text-sm xl:text-lg text-black' 
           >Your Tickets</span> 
           </Link>
         </div>
