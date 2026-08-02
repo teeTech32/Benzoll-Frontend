@@ -36,10 +36,10 @@ const NewTicket = () => {
   }
   
   return(
-    <div class='flex items-center justify-center py-28' >
+    <div class='flex items-center justify-center py-28 text-black' >
       <div class='w-[400px] bg-gradient-to-tr from-green-950 via-green-200 to-green-600 p-2 rounded-md shadow-xl'>
         <div class='w-full h-full bg-white relative'>
-          <RiChatDeleteFill class='absolute top-2 right-2 text-xl cursor-pointer text-green-500 hover:text-red-500' onClick={()=>navigate('/')}/>
+          <RiChatDeleteFill class='absolute top-2 right-2 text-xl cursor-pointer text-green-500 hover:text-green-700' onClick={()=>navigate('/')}/>
           <section class=' mt-5 mb-0 mx-5'>
             <header class='font-bold text-xl text-black leading-8 mt-5 pt-5'>
               <h1 class='flex justify-center pb-5 text-sm'>
@@ -60,7 +60,7 @@ const NewTicket = () => {
                      disabled/>
             </div>
             <div class='grid mb-2'>
-              <label htmlFor="name"  class='text-sm font-serif font-bold md:font-bold pt-2 pb-1 '>Customer's Email</label>
+              <label htmlFor="name"  class='text-sm font-serif font-bold md:font-bold pt-2 pb-1'>Customer's Email</label>
               <input type='email' 
                      id="name" 
                      value={email} 
@@ -73,7 +73,7 @@ const NewTicket = () => {
                 <select id="product" 
                         name="description" 
                         value={product} 
-                        class='text-sm px-4 py-2 bg-green-200 rounded-md shadow-lg'
+                        class='text-sm px-4 py-2 bg-green-200 rounded-md shadow-lg cursor-pointer'
                         required
                         onChange={(e)=>setProduct(e.target.value)} >
                   <option value=""></option>
@@ -91,7 +91,7 @@ const NewTicket = () => {
                 <textarea name="description" 
                           id="description" 
                           value={description} 
-                          class='text-xs px-4 py-2 border-2 rounded-md border-green-300' 
+                          class='text-xs px-4 py-2 border-2 rounded-md border-green-300 text-white' 
                           rows={5}
                           cols={30}
                           required
@@ -100,12 +100,12 @@ const NewTicket = () => {
                 </textarea>
               </div>
               <div class='float-end'>
-                <button class='btn btn-sm  bg-green-200 hover:bg-green-700 hover:text-white font-bold'>
+                <button class='btn btn-sm  bg-green-200 hover:bg-green-700 hover:text-white font-bold text-black'>
                   Submit
                 </button>
               </div>
             </form>
-            <button class='btn btn-sm bg-green-200 hover:bg-green-700 hover:text-white font-bold' onClick={onCancil}>
+            <button class='btn btn-sm bg-green-200 hover:bg-green-700 hover:text-white font-bold text-black' onClick={onCancil}>
                   Cancil
             </button>
           </section>

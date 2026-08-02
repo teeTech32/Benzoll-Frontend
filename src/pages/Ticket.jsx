@@ -44,13 +44,13 @@ const Ticket = () => {
   return ticket ?<div data-aos="fade-down"
                       data-aos-easing="linear"
                       data-aos-duration="1500" class='flex justify-center'> 
-  <div class='container w-[450px] h-auto md:w-[550px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-300 via-green-700 to-green-900 mx-6 my-28 py-5  rounded-t-xl rounded-bl-xl relative '>
+  <div class='container w-[450px] h-auto md:w-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-300 via-green-700 to-green-900 mx-6 my-28 py-5  rounded-t-xl rounded-bl-xl relative '>
     {showAlert && (
                   <div className="absolute   mb-2 right-0 top-2 transform -translate-x-1/2 bg-black text-white text-sm px-2 py-1 rounded-lg shadow-lg">
                     Go Back ?
                   </div>
                 )}
-    <RiChatDeleteFill class='text-xl md:text-2xl  cursor-pointer text-green-300 hover:text-red-600 absolute top-2 right-2' onClick={()=> navigate('/tickets')}
+    <RiChatDeleteFill class='text-xl md:text-2xl  cursor-pointer text-green-300 hover:text-green-700 absolute top-2 right-2' onClick={()=> navigate('/tickets')}
       onMouseEnter={()=>setShowAlert(true)}
       onMouseLeave={()=>setShowAlert(false)}/>
       <header class='font-bold text-center text-white text-md md:text-lg xl:text-xl font-serif mb-5'>
@@ -59,11 +59,11 @@ const Ticket = () => {
       <div class='my-2 absolute top-12 right-3'>
         <button class="btn btn-xs hover:bg-red-600 duration-1000 hover:scale-110 mr-2" onClick={()=>setDeleteTicket(true)}>
           <TiDelete class="text-red-600 " />
-          <p class='text-xs text-black hover:text-white'>Delete</p>
+          <p class='text-xs text-gray-300 hover:text-white'>Delete</p>
         </button>
         <button class="btn btn-xs hover:bg-green-900 duration-1000 hover:scale-110 mr-1" onClick={()=>setEditTicket(true)}>
           <MdEditSquare class='text-green-600 ' />
-          <p class='text-xs text-black hover:text-white'>Edit</p>
+          <p class='text-xs hover:text-white text-gray-300'>Edit</p>
         </button>
       </div>
       <div class='text-white text-xs md:text-xl xl:text-2xl'>
@@ -125,7 +125,7 @@ const Ticket = () => {
     { deleteTicket && <DeleteTicket setDeleteTicket={setDeleteTicket}/>}
     { editTicket && <EditTicket setEditTicket={setEditTicket}/>}
   </div>
-   : <Navigate to='/tickets'/>
+   : <Navigate to='/'/>
 }
 
 export default Ticket
